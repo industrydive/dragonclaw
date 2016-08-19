@@ -1,4 +1,4 @@
-FROM node:6.3.0
+FROM node:6.4.0-slim
 
 RUN mkdir -p /usr/src/dragonclaw
 WORKDIR /usr/src/dragonclaw
