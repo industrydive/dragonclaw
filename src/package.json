@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run compile-css",
     "watch": "./node_modules/node-sass/bin/node-sass --watch --recursive --output /code/media/new_design/css/ /code/media/new_design/scss/",
-    "compile-css": "./node_modules/node-sass/bin/node-sass --recursive --output /code/media/new_design/css/ /code/media/new_design/scss/",
+    "compile-css": "./node_modules/node-sass/bin/node-sass --recursive --output /code/media/new_design/css/ /code/media/new_design/scss/"
   },
   "keywords": [],
   "author": "",
