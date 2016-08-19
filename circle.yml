@@ -11,7 +11,7 @@ dependencies:
 
 test:
   override:
-    - docker run -it $IMAGE_TAG
+    - docker run -it $IMAGE_TAG npm run hello
 
 deployment:
   hub:
