@@ -1,7 +1,7 @@
 {
   "name": "dragonclaw",
-  "version": "0.0.1",
-  "description": "Mostly standard mostly fronend tools.",
+  "version": "0.0.2",
+  "description": "Mostly standard mostly frontend tools.",
   "main": "index.js",
   "scripts": {
     "build": "npm run compile-css && npm run prefix",
