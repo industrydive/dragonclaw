@@ -2,7 +2,8 @@ machine:
   services:
     - docker
   environment:
-    IMAGE_TAG: industrydive/dragonclaw:latest
+    IMAGE_TAG: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:$CIRCLE_BUILD_NUM
+    LATEST_TAG: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:latest
 
 dependencies:
   override:
@@ -17,5 +18,7 @@ deployment:
   hub:
     branch: master
     commands:
+      - docker tag $IMAGE_TAG $LATEST_TAG
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push $IMAGE_TAG
+      - docker push $LATEST_TAG

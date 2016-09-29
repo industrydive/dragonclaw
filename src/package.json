@@ -1,19 +1,22 @@
 {
   "name": "dragonclaw",
-  "version": "0.0.1",
-  "description": "Mostly standard mostly fronend tools.",
+  "version": "0.0.2",
+  "description": "Mostly standard mostly frontend tools.",
   "main": "index.js",
   "scripts": {
-    "build": "npm run compile-css",
+    "build": "npm run compile-css && npm run prefix",
     "watch": "./node_modules/node-sass/bin/node-sass --watch --recursive --output-style expanded --output /code/media/new_design/css/ /code/media/new_design/scss/",
-    "compile-css": "./node_modules/node-sass/bin/node-sass --recursive --output-style expanded --output /code/media/new_design/css/ /code/media/new_design/scss/",
+    "compile-css": "echo 'Compiling CSS' && ./node_modules/node-sass/bin/node-sass --recursive --output-style expanded --output /code/media/new_design/css/ /code/media/new_design/scss/",
+    "prefix": "echo 'Prefixing' && ./node_modules/postcss-cli/bin/postcss --use autoprefixer --replace /code/media/new_design/css/*.css",
     "hello": "echo 'hello world'"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "node-sass": "^3.8.0"
+    "node-sass": "^3.8.0",
+    "autoprefixer": "^6.5.0",
+    "postcss-cli": "^2.6.0"
   },
   "private": true
 }
