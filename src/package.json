@@ -11,7 +11,7 @@
     "watch:css": "onchange \"/src/scss\" -- npm run build:css -s",
     "scss": "node-sass --recursive --output-style expanded --output /dist/css/ /src/scss/",
     "autoprefixer": "postcss --use autoprefixer --replace /dist/css/*.css",
-    "lint": "eslint --config /dragonclaw/.eslintrc.json /src/js",
+    "lint": "eslint --config /dragonclaw/.eslintrc.json --ignore-path /dragonclaw/.eslintignore /src/js",
     "env": "env"
   },
   "keywords": [],

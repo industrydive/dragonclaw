@@ -3,6 +3,12 @@
         "browser": true
     },
     "extends": "eslint:recommended",
+    "globals": {
+        "$": false,
+        "jQuery": false,
+        "mixpanel": false,
+        "ados": false
+    },
     "rules": {
         "accessor-pairs": "error",
         "array-bracket-spacing": [
