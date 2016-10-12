@@ -1,13 +1,12 @@
-FROM node:6.4.0-slim
+FROM node:6.7.0-slim
 
-RUN mkdir -p /usr/src/dragonclaw
-WORKDIR /usr/src/dragonclaw
+RUN mkdir -p /src && mkdir -p /dist && mkdir -p /dragonclaw
+WORKDIR /dragonclaw
 
-COPY src/package.json /usr/src/dragonclaw/
+VOLUME ["/src", "/dist"]
+
+COPY src/package.json /dragonclaw
 RUN npm install
-COPY src /usr/src/dragonclaw
+COPY src /dragonclaw
 
-RUN mkdir -p /code
-VOLUME /code
-
-CMD [ "npm", "run", "build" ]
+CMD ["npm"]
