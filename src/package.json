@@ -1,21 +1,27 @@
 {
   "name": "dragonclaw",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Mostly standard mostly frontend tools.",
   "main": "index.js",
   "scripts": {
-    "build": "npm run compile-css && npm run prefix",
-    "watch": "./node_modules/node-sass/bin/node-sass --watch --recursive --output-style expanded --output /code/media/new_design/css/ /code/media/new_design/scss/",
-    "compile-css": "echo 'Compiling CSS' && ./node_modules/node-sass/bin/node-sass --recursive --output-style expanded --output /code/media/new_design/css/ /code/media/new_design/scss/",
-    "prefix": "echo 'Prefixing' && ./node_modules/postcss-cli/bin/postcss --use autoprefixer --replace /code/media/new_design/css/*.css",
-    "hello": "echo 'hello world'"
+    "clean": "rm -f /dist/{css/*,js/*,images/*}",
+    "build": "npm run build:css -s",
+    "watch": "npm run watch:css -s",
+    "build:css": "npm run scss -s && npm run autoprefixer -s",
+    "watch:css": "onchange \"/src/scss\" -- npm run build:css -s",
+    "scss": "node-sass --recursive --output-style expanded --output /dist/css/ /src/scss/",
+    "autoprefixer": "postcss --use autoprefixer --replace /dist/css/*.css",
+    "lint": "eslint --config /dragonclaw/.eslintrc.json /src/js",
+    "env": "env"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "node-sass": "^3.8.0",
     "autoprefixer": "^6.5.0",
+    "eslint": "^3.7.1",
+    "node-sass": "^3.10.1",
+    "onchange": "^3.0.2",
     "postcss-cli": "^2.6.0"
   },
   "private": true

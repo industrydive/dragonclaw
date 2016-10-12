@@ -8,17 +8,16 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t $IMAGE_TAG .
 
 test:
   override:
-    - docker run -it $IMAGE_TAG npm run hello
+    - make test
 
 deployment:
   hub:
     branch: master
     commands:
-      - docker tag $IMAGE_TAG $LATEST_TAG
+      - docker tag $LATEST_TAG $IMAGE_TAG
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push $IMAGE_TAG
       - docker push $LATEST_TAG
