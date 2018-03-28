@@ -10,7 +10,7 @@
     "build:css": "npm run scss -s && npm run autoprefixer -s",
     "watch:css": "onchange scss/* -- npm run build:css -s",
     "scss": "node-sass --recursive --output-style expanded --output css scss",
-    "autoprefixer": "postcss -u autoprefixer -r css/*.css",
+    "autoprefixer": "postcss -u autoprefixer -r css/*.css --no-map",
     "lint": "eslint --config /dragonclaw/.eslintrc.json --ignore-path /dragonclaw/.eslintignore /src/js",
     "env": "env"
   },
