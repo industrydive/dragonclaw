@@ -10,7 +10,7 @@
     "build:css": "npm run scss -s && npm run autoprefixer -s",
     "watch:css": "onchange scss/* -- npm run build:css -s",
     "scss": "node-sass --recursive --output-style expanded --output css scss",
-    "autoprefixer": "postcss -u autoprefixer -r css/*",
+    "autoprefixer": "postcss -u autoprefixer -r css/*.css",
     "lint": "eslint --config /dragonclaw/.eslintrc.json --ignore-path /dragonclaw/.eslintignore /src/js",
     "env": "env"
   },
@@ -18,11 +18,11 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^6.5.0",
+    "autoprefixer": "^8.2.0",
     "eslint": "^3.7.1",
-    "node-sass": "^3.10.1",
-    "onchange": "^3.0.2",
-    "postcss-cli": "^2.6.0"
+    "node-sass": "^4.8.3",
+    "onchange": "^3.3.0",
+    "postcss-cli": "^5.0.0"
   },
   "private": true
 }
