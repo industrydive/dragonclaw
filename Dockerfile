@@ -2,7 +2,7 @@ FROM node:9.10.0-slim
 
 WORKDIR /dragonclaw
 
-VOLUME ["/src", "/dist"]
+VOLUME ["/dragonclaw/scss", "/dragonclaw/css"]
 
 COPY src/package.json /dragonclaw
 RUN npm install
