@@ -1,17 +1,16 @@
 {
   "name": "dragonclaw",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Mostly standard mostly frontend tools.",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -f /dist/{css/*,js/*,images/*}",
+    "clean": "rm -f {css/*,js/*,images/*}",
     "build": "npm run build:css -s",
     "watch": "npm run watch:css -s",
     "build:css": "npm run scss -s && npm run autoprefixer -s",
     "watch:css": "onchange scss/* -- npm run build:css -s",
     "scss": "node-sass --recursive --output-style expanded --output css scss",
     "autoprefixer": "postcss -u autoprefixer -r css/*.css --no-map",
-    "lint": "eslint --config /dragonclaw/.eslintrc.json --ignore-path /dragonclaw/.eslintignore /src/js",
     "env": "env"
   },
   "keywords": [],
@@ -19,7 +18,6 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^8.2.0",
-    "eslint": "^3.7.1",
     "node-sass": "^4.8.3",
     "onchange": "^3.3.0",
     "postcss-cli": "^5.0.0"

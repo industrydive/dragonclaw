@@ -1,6 +1,5 @@
-FROM node:6.7.0-slim
+FROM node:9.10.0-slim
 
-RUN mkdir -p /src && mkdir -p /dist && mkdir -p /dragonclaw
 WORKDIR /dragonclaw
 
 VOLUME ["/src", "/dist"]
