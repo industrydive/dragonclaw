@@ -1,0 +1,17 @@
+body {
+  background-color: #d62828;
+}
+
+.foo {
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  border-radius: 2px;
+}
+
+.Tour {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}

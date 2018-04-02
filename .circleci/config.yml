@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    environment:
+      IMAGE_TAG: ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}:${CIRCLE_BUILD_NUM}
+      LATEST_TAG: ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}:latest
+    steps:
+      - checkout
+      - run:
+          name: Building and testing the container.
+          command: make test
+      - deploy:
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              docker tag ${LATEST_TAG} ${IMAGE_TAG}
+              docker login -e ${DOCKER_EMAIL} -u ${DOCKER_USER} -p ${DOCKER_PASS}
+              docker push ${IMAGE_TAG}
+              docker push ${LATEST_TAG}
+            fi
