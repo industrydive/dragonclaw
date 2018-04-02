@@ -7,6 +7,9 @@ jobs:
       IMAGE_TAG: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:$CIRCLE_BUILD_NUM
       LATEST_TAG: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:latest
     steps:
+      - run:
+          name: Install make
+          command: apt-get update && apt-get install --no-install-recommends -yqq make
       - setup_remote_docker
       - checkout
       - run:
