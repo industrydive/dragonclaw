@@ -12,10 +12,9 @@ jobs:
           command: apk update && apk add make
       - setup_remote_docker
       - checkout
-      - run: echo ${LATEST_TAG}
       - run:
           name: Build.
-          command: docker build -t $(LATEST_TAG) .
+          command: docker build -t ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}:latest .
       - run:
           name: Building and testing the container.
           command: make test
