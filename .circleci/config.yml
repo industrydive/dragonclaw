@@ -13,7 +13,6 @@ jobs:
         name: Building and testing the container.
         command: make test
       - deploy:
-        name: Deploying the container to Docker Hub.
         command: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
             docker tag $LATEST_TAG $IMAGE_TAG
