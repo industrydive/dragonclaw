@@ -16,7 +16,7 @@ jobs:
           name: Build.
           command: |
             docker build -t ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}:latest .
-            docker run --rm -it -v ${PWD}/tests/scss:/dragonclaw/scss -v ${PWD}/tests/css:/dragonclaw/css $(LATEST_TAG) bash -c "ls -lah && pwd"
+            docker run --rm -it -v ${PWD}/tests/scss:/dragonclaw/scss -v ${PWD}/tests/css:/dragonclaw/css ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}:latest bash -c "ls -lah && pwd"
       - run:
           name: Building and testing the container.
           command: make test
