@@ -10,8 +10,8 @@ jobs:
       - setup_remote_docker
       - checkout
       - run:
-        name: Building and testing the container.
-        command: make test
+          name: Building and testing the container.
+          command: make test
       - deploy:
         command: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
