@@ -7,12 +7,12 @@ jobs:
       IMAGE_TAG: ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}:${CIRCLE_BUILD_NUM}
       LATEST_TAG: ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}:latest
     steps:
-      - run: ls -lah
       - run:
           name: Install make for task running.
           command: apk update && apk add make
       - setup_remote_docker
       - checkout
+      - run: ls -lah && pwd
       - run:
           name: Building and testing the container.
           command: make test
