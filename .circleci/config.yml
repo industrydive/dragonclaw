@@ -13,10 +13,10 @@ jobs:
           name: Building and testing the container.
           command: make test
       - deploy:
-        command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            docker tag $LATEST_TAG $IMAGE_TAG
-            docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-            docker push $IMAGE_TAG
-            docker push $LATEST_TAG
-          fi
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              docker tag $LATEST_TAG $IMAGE_TAG
+              docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+              docker push $IMAGE_TAG
+              docker push $LATEST_TAG
+            fi
