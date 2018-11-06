@@ -12,7 +12,7 @@
     "scss": "node-sass --recursive --output-style expanded --output css scss",
     "autoprefixer": "postcss -u autoprefixer -r css/*.css --no-map",
     "lint": "npm run lint:js -s",
-    "lint:js": "eslint --config /dragonclaw/.eslintrc.json --ignore-path /dragonclaw/.eslintignore js/**/*.js; exit 0;",
+    "lint:js": "eslint js --config /dragonclaw/.eslintrc.json --ignore-path /dragonclaw/.eslintignore --ext .js; exit 0;",
     "watch:js": "onchange js/*.js -- npm run lint:js -s",
     "env": "env"
   },
