@@ -1,7 +1,8 @@
 *.min.js
 jquery.fn.sortable.js
 rem.js
-moment/moment-timezone-with-data.js
+*/foundation
+*/moment
 jquery.lightbox_me.js
 modernizr.custom.71830.js
 jquery.colorbox-min.js
